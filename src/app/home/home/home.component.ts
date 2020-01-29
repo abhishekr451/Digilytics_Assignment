@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private renderer: Renderer2) { }
+  loginClass = "login-page";
+  test=6253
   ngOnInit() {
+    this.renderer.removeClass(document.body, this.loginClass)
   }
 
 }

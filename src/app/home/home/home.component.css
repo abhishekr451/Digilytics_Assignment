@@ -1,0 +1,18 @@
+.content-wrapper{
+    margin-left: 0px!important
+}
+.link{
+    cursor: pointer;
+}
+
+.btn-block {
+    display: initial;
+    width: 20%;
+    margin-left: 10%
+}
+
+.bg-gradient-primary {
+    background: orange -webkit-gradient(linear,left top, left bottom,from(orange),to(orange)) repeat-x!important;
+    background: orange linear-gradient(180deg,orange,orange) repeat-x!important;
+
+}

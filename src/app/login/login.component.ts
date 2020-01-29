@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import { ApiService } from '../Services/Api.service'
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private api: ApiService, private router: Router) { }
   model: any = {}
-
+  
   ngOnInit() {
   }
   login() {
