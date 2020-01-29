@@ -8,7 +8,10 @@ const routes: Routes = [
       path: 'login', component:LoginComponent
   },
   {
-      path: 'home',  loadChildren: './home/home.module#HomeModule'
+      path: 'home',canActivate: [AuthRouteGuard],  loadChildren: './home/home.module#HomeModule'
+  },
+  {
+      path: '',  redirectTo: 'login', pathMatch: 'full'
   },
   {
       path: '**',  redirectTo: 'login', pathMatch: 'full'

@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthRouteGuard } from './Services/auth-route-guard.service'
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ApiService } from './Services/Api.service'
 
 
 
@@ -21,7 +22,7 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     FormsModule
   ],
-  providers: [AuthRouteGuard],
+  providers: [AuthRouteGuard,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

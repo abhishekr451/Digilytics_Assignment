@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRoute,ActivatedRouteSnapshot,RouterStateSnapshot } from "@angular/router";
-import { Location } from '@angular/common'
-import { forEach } from '@angular/router/src/utils/collection';
+import { CanActivate, Router } from "@angular/router";
 
 
 @Injectable()
@@ -11,10 +9,13 @@ export class AuthRouteGuard implements CanActivate {
 
   }
 
-  canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot) {
- return true;
-
-   
+  canActivate() {
+    if (localStorage.getItem('token') === "1") {
+      return true
+    }
+    else {
+      this.router.navigate(['login'])
+    }
   }
 
 }

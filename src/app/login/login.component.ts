@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Services/Api.service'
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,12 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService, private router: Router) { }
   model: any = {}
+
   ngOnInit() {
   }
-
-  login(){
-console.log(this.model)
+  login() {
+    this.api.GetJson().subscribe(res => {
+      if (this.model.username === res.users[0].name && this.model.password === res.users[0].password) {
+        localStorage.setItem('token','1');
+        this.router.navigate(['home'])
+      }
+      else {
+        alert("Invalid Credentials")
+      }
+    })
   }
 }
