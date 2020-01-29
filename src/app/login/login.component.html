@@ -1,3 +1,51 @@
-<p>
-  login works!
-</p>
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Assignment</b></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+
+      <form (ngSubmit)="f.form.valid && login()" #f="ngForm">
+        <div class="input-group mb-3">
+          <input type="text" [style.border-color]="f.submitted && username.errors ? '#f00':'#247DC4'" class="form-control requird"
+          placeholder="User Name" name="username" [(ngModel)]="model.username" #username="ngModel" required pattern="[\w\.-]+(\+[\w-]*)?@([\w-]+\.)+[\w-]+">
+          <div class="input-group-append" >
+            <div class="input-group-text" [style.border-color]="f.submitted && username.errors ? '#f00':'#247DC4'">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" [style.border-color]="f.submitted && !password.valid ? '#f00':'#247DC4'" class="form-control requird"
+          placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+          <div class="input-group-append">
+            <div class="input-group-text" [style.border-color]="f.submitted && !password.valid ? '#f00':'#247DC4'">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <span *ngIf="f.submitted && username.errors" [style.color]="f.submitted && username.errors ? '#f00':'#247DC4'"  >Enter valid Username</span><br>
+        <span *ngIf="f.submitted && password.errors" [style.color]="f.submitted && username.errors ? '#f00':'#247DC4'">Password is Required</span>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>

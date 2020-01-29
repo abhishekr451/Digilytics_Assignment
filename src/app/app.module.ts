@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AuthRouteGuard } from './Services/auth-route-guard.service'
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 
 
 @NgModule({
@@ -14,7 +17,9 @@ import { AuthRouteGuard } from './Services/auth-route-guard.service'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    FormsModule
   ],
   providers: [AuthRouteGuard],
   bootstrap: [AppComponent]
