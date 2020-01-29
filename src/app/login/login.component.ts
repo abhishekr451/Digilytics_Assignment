@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login() {
-    this.api.GetJson().subscribe(res => {
+    this.api.GetJson().subscribe(res => {//Password shoud be encrypted in Md5 hashing & salting should be done
       if (this.model.username === res.users[0].name && this.model.password === res.users[0].password) {
         localStorage.setItem('token','1');
         this.router.navigate(['home'])
