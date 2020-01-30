@@ -1,105 +1,129 @@
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1 class="m-0 text-dark">Sort By</h1>
-        </div><!-- /.col -->
+        </div>
+        <!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">
+              <a href="#">Home</a>
+            </li>
             <li class="breadcrumb-item active">Flights</li>
           </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
   </div>
   <!-- /.content-header -->
 
   <section class="content">
-      <div class="container-fluid">
-        <!-- /.row -->
+    <div class="container-fluid">
+      <!-- /.row -->
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <div class="row">
-                  <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(0)"> <h6 class="link" *ngIf="!filter[0]">Departure</h6><h6 class="link" *ngIf="filter[0]">Departure&#8593;</h6></div>
-                  <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(1)"> <h6 class="link" *ngIf="!filter[1]">Duration</h6><h6 class="link" *ngIf="filter[1]">Duration&#8593;</h6></div>
-                  <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(2)"> <h6 class="link" *ngIf="!filter[2]">Arrival</h6><h6 class="link" *ngIf="filter[2]">Arrival&#8593;</h6></div>
-                  <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(3)"> <h6 class="link" *ngIf="!filter[3]">Price</h6><h6 class="link" *ngIf="filter[3]">Price&#8593;</h6></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(0)">
+                  <h6 class="link" *ngIf="!filter[0]">Departure</h6>
+                  <h6 class="link" *ngIf="filter[0]">Departure&#8593;</h6>
                 </div>
-
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(1)">
+                  <h6 class="link" *ngIf="!filter[1]">Duration</h6>
+                  <h6 class="link" *ngIf="filter[1]">Duration&#8593;</h6>
                 </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
-        <!-- Main row -->
-        <div class="row" *ngFor="let details of flightDetails;">
-          <!-- Left col -->
-          <div class="col-md-12">
-            <!-- MAP & BOX PANE -->
-            <div class="card" style="min-height: 180px!important;">
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="d-md-flex">
-                  <div class="p-1 flex-fill" style="overflow: hidden">
-                    <div class="row">
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                          <img src={{details.img}} alt="">
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <p class="text-muted text-sm" style="margin-top: 32px;"><b>BOM</b> Mumbai,India</p>
-                      </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                          <b>{{details.departure}}</b>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12"> 
-                          <b>{{details.duration}}</b>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <b>{{details.arrival}}</b>
-                          </div>
-                          <div class="col-md-3 col-sm-6 col-xs-12"> 
-                              <span style="font-weight:bold;margin-left: 15%"> {{details.Price | currency:'INR'}}</span><button type="button" class="btn btn-block bg-gradient-primary">Book</button>
-                              <p class="text-muted text-sm"> No Cost EMI From <b>{{details.emi  | currency:'INR'}}</b></p>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-3 col-sm-6 col-xs-12">
-                              <p class="text-muted text-sm">Partially Refundable</p>
-                            </div>
-                          <div class="col-md-6 col-sm-6 col-xs-12"> 
-                          </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12"> 
-                              <a href="#" style="margin-left: 40%" class="dropdown-icon">Flight details</a>
-                            </div>
-                        </div>
-                    
-                    
-                  </div>
-                </div><!-- /.d-md-flex -->
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(2)">
+                  <h6 class="link" *ngIf="!filter[2]">Arrival</h6>
+                  <h6 class="link" *ngIf="filter[2]">Arrival&#8593;</h6>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(3)">
+                  <h6 class="link" *ngIf="!filter[3]">Price</h6>
+                  <h6 class="link" *ngIf="filter[3]">Price&#8593;</h6>
+                </div>
               </div>
-              <!-- /.card-body -->
+
             </div>
+            <!-- /.card-footer -->
           </div>
-          <!-- /.col -->
-
-
-          <!-- /.col -->
+          <!-- /.card -->
         </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Main row -->
+      <div class="row" *ngFor="let details of flightDetails;">
+        <!-- Left col -->
+        <div class="col-md-12">
+          <!-- MAP & BOX PANE -->
+          <div class="card" style="min-height: 180px!important;">
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+              <div class="d-md-flex">
+                <div class="p-1 flex-fill" style="overflow: hidden">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <img src={{details.img}} alt="">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <p class="text-muted text-sm" style="margin-top: 32px;">
+                        <b>BOM</b> Mumbai,India</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <b>{{details.departure}}</b>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <b>{{details.duration}}</b>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <b>{{details.arrival}}</b>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <span style="font-weight:bold;margin-left: 15%"> {{details.Price | currency:'INR'}}</span>
+                      <button type="button" class="btn btn-block bg-gradient-primary">Book</button>
+                      <p class="text-muted text-sm"> No Cost EMI From
+                        <b>{{details.emi | currency:'INR'}}</b>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <p class="text-muted text-sm">Partially Refundable</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <a href="#" style="margin-left: 40%" class="dropdown-icon">Flight details</a>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <!-- /.d-md-flex -->
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!--/. container-fluid -->
+  </section>
   <!-- /.content -->
 </div>
