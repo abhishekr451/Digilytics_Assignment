@@ -15,15 +15,28 @@ export class HomeComponent implements OnInit {
   flightDetails=[]
   ngOnInit() {
     this.renderer.removeClass(document.body, this.loginClass)
-    this.api.GetJson().subscribe(res=>{
-     this.flightDetails= res.Data
-     this.Sort()
-    })
+    this.GetList();
   }
-
+  GetList(){
+    this.api.GetJson().subscribe(res=>{
+      this.flightDetails= res.Data
+      this.Sort()
+     })
+  }
   SwitchFilter(value){
+    let i=false
     this.filter[value]=!this.filter[value]
-    this.Sort()
+    for(var j=0;j<this.filter.length;j++){
+      if(this.filter[j]){
+        i=true
+      }
+    }
+    if(i){
+      this.Sort()
+    }
+    else{
+      this.GetList();
+    }
   }
 
   Sort(){
