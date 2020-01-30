@@ -35,19 +35,19 @@
               <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(0)">
                   <h6 class="link" *ngIf="!filter[0]">Departure</h6>
-                  <h6 class="link" *ngIf="filter[0]">Departure&#8593;</h6>
+                  <h6 class="link" *ngIf="filter[0]" style="color: #058bf2">Departure&#8593;</h6>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(1)">
                   <h6 class="link" *ngIf="!filter[1]">Duration</h6>
-                  <h6 class="link" *ngIf="filter[1]">Duration&#8593;</h6>
+                  <h6 class="link" *ngIf="filter[1]" style="color: #058bf2">Duration&#8593;</h6>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(2)">
                   <h6 class="link" *ngIf="!filter[2]">Arrival</h6>
-                  <h6 class="link" *ngIf="filter[2]">Arrival&#8593;</h6>
+                  <h6 class="link" *ngIf="filter[2]" style="color: #058bf2">Arrival&#8593;</h6>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 text-center" (click)="SwitchFilter(3)">
                   <h6 class="link" *ngIf="!filter[3]">Price</h6>
-                  <h6 class="link" *ngIf="filter[3]">Price&#8593;</h6>
+                  <h6 class="link" *ngIf="filter[3]" style="color: #058bf2">Price&#8593;</h6>
                 </div>
               </div>
 
@@ -72,21 +72,23 @@
                 <div class="p-1 flex-fill" style="overflow: hidden">
                   <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <img src={{details.img}} alt="">
+                      <img src={{details.img}} alt="" style="margin-left: 18%">
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
                       <p class="text-muted text-sm" style="margin-top: 32px;">
                         <b>BOM</b> Mumbai,India</p>
                     </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                      <b>{{details.departure}}</b>
+                    <div class="col-md-3 col-sm-6 col-xs-12" >
+                      <b style="margin-left: 36%">{{details.departure}}</b>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
                       <b>{{details.duration}}</b>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
                       <b>{{details.arrival}}</b>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -99,7 +101,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                      <p class="text-muted text-sm">Partially Refundable</p>
+                      <p class="text-muted text-sm" style="margin-left: 36%">Partially Refundable</p>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                     </div>

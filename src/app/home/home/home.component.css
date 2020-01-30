@@ -14,5 +14,6 @@
 .bg-gradient-primary {
     background: orange -webkit-gradient(linear,left top, left bottom,from(orange),to(orange)) repeat-x!important;
     background: orange linear-gradient(180deg,orange,orange) repeat-x!important;
+    /* Unable to fetch color code from pdf file image,tried color picker */
 
 }
